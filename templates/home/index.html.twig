@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+    {% block carousel %}
+    {% endblock %}
+ 
+{% block content %}
+
+        <h3>Vos produits préférés</h3>
+        <p>Découvrez les produits les plus vendus.</p>
+
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-3">
+                    {% include 'product/single_product.html.twig' %}
+                </div>
+            {% endfor %}
+        </div><!-- /.row -->
+
+
+        <!-- START THE FEATURETTES -->
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Une équipe passionnée<span class="text-muted"> au grand savoir faire.</span></h2>
+                <p class="lead">Nos équipes sont des professionnels passionnés par leur métier, c'est avec plaisir qu'ils vous préparent vos repas.</p>
+            </div>
+            <div class="col-md-5">
+                <img src="{{ asset('assets/img/burger.jpeg') }}" class="img-fluid" alt="Une équipe de passionnés"/>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <div class="row featurette">
+            <div class="col-md-7  order-md-2">
+                <h2 class="featurette-heading">Une livraison rapide <span class="text-muted">pour vos soins.</span></h2>
+                <p class="lead">Nous sélectionnons les meilleurs livreurs pour vous offrir une livraison rapide avec une commande qui arrive dans le même état qu'à son départ.</p>
+            </div>
+            <div class="col-md-5  order-md-1">
+                <img src="{{ asset('assets/img/livreur.jpeg') }}" class="img-fluid" alt="Un savoir faire Français"/>
+            </div>
+        </div>
+
+        <hr class="featurette-divider">
+
+        <!-- /END THE FEATURETTES -->
+{% endblock %}
